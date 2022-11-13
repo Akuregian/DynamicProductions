@@ -1,4 +1,4 @@
-#include "../Core/Core.hpp"
+#include "Core.hpp"
 
 int main(void)
 {
@@ -6,7 +6,7 @@ int main(void)
 	Dynamic::Clock->Initialize();
 	Dynamic::Event->Initialize();
 
-	while (Dynamic::Core->Run()) {
+	while (Dynamic::IEngine::Reference()->Run()) {
 		Dynamic::Clock->Tick();
 		Dynamic::Event->Poll();
 		Dynamic::Core->Update();

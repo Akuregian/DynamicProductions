@@ -1,5 +1,5 @@
 #pragma once
 
-#include "../IEngine/IEngine.hpp"
-#include "../Timer/Timer.hpp"
-#include "../Events/Events.hpp"
+#include "IEngine.hpp"
+#include "Timer.hpp"
+#include "Events.hpp"

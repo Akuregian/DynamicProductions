@@ -2,8 +2,6 @@
 
 namespace Dynamic {
 
-	std::shared_ptr<Timer> Timer::s_Timer = std::make_shared<Timer>();
-
 	Timer::Timer() : lastFrame(0.0f), deltaTime(0.0f) { }
 
 	Timer::~Timer() { }
@@ -13,5 +11,5 @@ namespace Dynamic {
 		lastFrame = glfwGetTime();
 	}
 
-	void Timer::Initialize() { LOG("Initialized Timer");}
+	void Timer::Initialize() {/* LOG("Initialized Timer"); */ }
 }

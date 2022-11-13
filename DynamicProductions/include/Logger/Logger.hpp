@@ -1,5 +1,4 @@
 #pragma once
-#include "pch.hpp"
 #include "spdlog/sinks/stdout_color_sinks.h"
 #include "spdlog/spdlog.h"
 
@@ -7,11 +6,18 @@ namespace Dynamic {
 
 	class Logger {
 	public:
+		~Logger();
+		Logger(const Logger&) = delete;
+		Logger& operator=(const Logger&) = delete;
+
 		static void Init();
-		static inline std::shared_ptr<spdlog::logger>& GetEngineLogger() { return s_EngineLogger; };
+		static inline std::shared_ptr<spdlog::logger> GetEngineLogger() {
+			static std::shared_ptr<spdlog::logger> reference(new spdlog::logger("Dynamic Productions"));
+			return reference; 
+		};
 
 	private:
-		static std::shared_ptr<spdlog::logger> s_EngineLogger;
+		Logger();
 	};
 }
 

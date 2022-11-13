@@ -18,8 +18,7 @@ add_executable (DynamicProductions
 			"include/IEngine/IEngine.cpp" 
 			"include/Timer/Timer.cpp" 
 			"include/Events/Events.cpp"
-			
-	)
+			"include/PreCompiledHeader/pch.cpp")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET DynamicProductions PROPERTY CXX_STANDARD 20)
@@ -39,5 +38,12 @@ add_subdirectory("libs/spdlog-1.x")
 find_package(OpenGL REQUIRED)
 
 target_link_libraries(${PROJECT_NAME} OpenGL::GL glfw spdlog::spdlog)
-target_include_directories(${PROJECT_NAME} PUBLIC "include/PreCompiledHeader")
+target_include_directories(${PROJECT_NAME} PUBLIC 
+		"include/PreCompiledHeader" 
+		"include/IEngine" 
+		"include/Core"
+		"include/Events"
+		"include/Logger"
+		"include/Timer"
+)
 

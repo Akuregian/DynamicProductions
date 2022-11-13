@@ -2,8 +2,6 @@
 
 namespace Dynamic {
 
-	std::shared_ptr<IEngine> IEngine::s_Reference = std::make_shared<IEngine>();
-
 	IEngine::IEngine()
 		: m_Run(true), m_Window(nullptr), WindowHeight(0), WindowWidth(0)
 	{
@@ -20,7 +18,7 @@ namespace Dynamic {
 
 	IEngine::~IEngine() {  glfwTerminate(); }
 
-	void IEngine::Initialize() { LOG("Initialized Engine"); };
+	void IEngine::Initialize() { /* LOG("Initialized Engine"); */ };
 
 	void IEngine::Update() {  }
 

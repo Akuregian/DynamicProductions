@@ -2,12 +2,15 @@
 
 namespace Dynamic {
 
-	std::shared_ptr<spdlog::logger> Logger::s_EngineLogger;
+
+	Logger::Logger() {
+		Logger::Init();
+	}
 
 	void Logger::Init() {
 		 spdlog::set_pattern("%^[%T] %n: %v%$");
-		 s_EngineLogger = spdlog::stdout_color_mt("NeuroEvolution");
-		 s_EngineLogger->set_level(spdlog::level::trace);
+		 Logger::GetEngineLogger() = spdlog::stdout_color_mt("Dynamic Productions Logger");
+		 Logger::GetEngineLogger()->set_level(spdlog::level::trace);
 	}
 
 }
