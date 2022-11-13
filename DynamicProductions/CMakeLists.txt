@@ -28,6 +28,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 		"include/Events"
 		"include/Logger"
 		"include/Timer"
+		"include/EntityComponentSystem/Base"
 )
 add_subdirectory("include")
 
